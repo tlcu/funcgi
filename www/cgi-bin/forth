@@ -1,0 +1,21 @@
+#! /usr/bin/env gforth
+.( Content-Type: text/plain; charset=utf-8) cr
+cr
+: zeroes ( u -- )
+    0 +do '0 emit loop ;
+
+: u.rz ( u1 u2 -- )
+    >r s>d  <<# #s #> r> over - zeroes type #>> ;
+
+.( Page generated ) time&date 4 u.rz .( -) 2 u.rz .( -) 2 u.rz space
+                    .( at ) 2 u.rz .( :) 2 u.rz .( :) 2 u.rz cr
+\ : printargs ( -- )
+\     argc @ 0 +do
+\         ." arg" i . ." = '" i arg type ." '" cr
+\     loop ;
+\ printargs
+\ s" QUERY_STRING" getenv type cr
+\ s" PATH_INFO" getenv type cr
+\ s" PATH_TRANSLATED" getenv type
+\ s" CONTENT_LENGTH" getenv type
+bye

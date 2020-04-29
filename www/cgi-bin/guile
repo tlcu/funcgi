@@ -1,0 +1,6 @@
+#!/usr/bin/guile -s
+!#
+(use-modules (srfi srfi-98) (ice-9 format))
+(display "Content-Type: text/plain\r\n\r\n")
+(display (format #f "Query: ~s" (get-environment-variable "QUERY_STRING")))
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env tclsh
+if {[info exists env(QUERY_STRING)]} {
+  set qs "<strong>Query: $env(QUERY_STRING)</strong>"
+} {
+  set qs "<em>No query</em>"
+}
+proc generate_page {qs} {
+  set date [clock format [clock seconds] -format "%Y-%m-%d at %T"]
+  puts stdout "Content-type: text/html\n"
+  puts stdout "
+    <!DOCTYPE html>
+    <title>Tcl</title>
+    <link rel='stylesheet' type='text/css' href='/style.css'>
+    <h1>Tcl</h1>
+    <p>Page generated on $date
+    <p>$qs
+    <img style='display: block; margin: 2ex 0;' height=300px src='/images/tcl.gif'>
+  "
+}
+
+if {[catch {generate_page $qs} err]} {
+  puts stdout "Content-type: text/plain\n\n$err"
+}

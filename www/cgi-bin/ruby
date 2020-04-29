@@ -1,0 +1,14 @@
+#!/usr/bin/ruby
+require 'cgi'
+require 'pp'
+cgi = CGI.new
+
+print cgi.header
+print """
+<!DOCTYPE html>
+<title>Ruby</title>
+<h1>Ruby</h1>
+<p>Hello World!
+<hr>
+"""
+pp ENV

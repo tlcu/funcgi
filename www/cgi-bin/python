@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+print("Content-Type: text/html")
+print("""
+<!DOCTYPE html>
+<title>Python CGI</title>
+<h1>Python</h1>
+<p>Try tacking a <code>?name=$NAME</code> onto this URL.
+""")
+
+import cgi,cgitb
+cgitb.enable() #for debugging
+form = cgi.FieldStorage()
+name = form.getvalue('name')
+print("<p>Name of the user is:", name)

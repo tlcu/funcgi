@@ -1,0 +1,15 @@
+#!/usr/bin/env jimsh
+
+proc generate_page {} {
+  puts stdout "Content-type: text/html\n"
+  puts stdout {
+    <!DOCTYPE html>
+    <title>Jim</title>
+    <h1>Jim Tcl</h1>
+    <p>Hello World!
+  }
+}
+
+if {[catch { generate_page } err]} {
+  puts stdout "Content-type: text/plain\n\n$err"
+}

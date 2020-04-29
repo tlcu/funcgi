@@ -1,0 +1,39 @@
+#!/bin/sh
+echo 'content-type: text/html'
+echo "
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Test Page</title>
+<link rel='stylesheet' type='text/css' href='/style.css'>
+<header>
+  <h1>🐚 CGI shell script example</h1>
+</header>
+<main>
+  <p>Query string: $(
+  if [ -z ${QUERY_STRING+x} ]
+  then
+    echo '<span class="query">none</span>.'
+    echo '<p>Try appending <code>?hello</code> to the URL.'
+  else
+    echo '<span class="query">'
+    echo "$QUERY_STRING"
+    echo '</span>'
+    echo '<p>Extra credit if you can hack this input. 😉'
+  fi
+  )
+  <h2>Example code</h2>
+  <pre>
+  <code>
+  $(sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g' shell)
+  </code>
+  </pre>
+  <p>Page generated <time datetime=$(date +%Y-%m-%dT%T%z)>$(date)</time>
+</main>
+<footer>
+  <nav>
+    <a href='/'>Go home</a>
+    <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY</a>
+  </nav>
+</footer>
+"
