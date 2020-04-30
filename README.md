@@ -14,20 +14,20 @@ Have fun with [CGI]!
 
 ## Flavors
 
-Besides dropping amd64 linux binaries in `www/cgi-bin/`, a number of
-flavors are available with interpreters pre-installed:
+A number of programming environments are ready to go:
 
-| Image    | Description                                   | Size (MB) |
+| Flavor   | Description                                   | Size (MB) |
 | ---------| --------------------------------------------- | --------- |
 | base     | barebones [BusyBox] environment               | 5.73      |
-| [forth]  | _the_ stack based programming language        | 8.36      |
-| [guile]  | scheme dialect / GNU extension language       | 18.9      |
-| [jim]    | small-footprint yet full-featured Tcl dialect | 10.1      |
-| [lua]    | lightweight, embeddable scripting language    | 6.09      |
-| [perl]   | 25,000 extensions on CPAN                     | 39.9      |
-| [python] | popular and easy-to-learn                     | 58.6      |
-| [ruby]   | 'Ruby is designed to make programmers happy'  | 24.3      |
-| [tcl]    | Tool Command Language, batteries included     | 20.6      |
+| [Forth]  | _the_ stack based programming language        | 8.36      |
+| [Guile]  | scheme dialect / GNU extension language       | 18.9      |
+| [Jim]    | small-footprint yet full-featured Tcl dialect | 10.1      |
+| [Lua]    | lightweight, embeddable scripting language    | 6.09      |
+| [OCaml]  | an industrial strength programming language   | 202       |
+| [Perl]   | 25,000 extensions on CPAN                     | 39.9      |
+| [Python] | popular and easy-to-learn                     | 58.6      |
+| [Ruby]   | 'Ruby is designed to make programmers happy'  | 24.3      |
+| [Tcl]    | Tool Command Language, batteries included     | 20.6      |
 
 ## Try it
 
@@ -101,13 +101,14 @@ Code is [0BSD], content is [CC BY].
 [CGI]: https://tools.ietf.org/html/rfc3875
 [dbohdan/jimsh-static]: https://github.com/dbohdan/jimsh-static
 [dseg/docker-mini_httpd-cgi]: https://github.com/dseg/docker-mini_httpd-cgi
-[forth]: https://en.wikipedia.org/wiki/Forth_(programming_language)
-[guile]: https://www.gnu.org/software/guile/
-[jim]: http://jim.tcl.tk/
-[lua]: https://www.lua.org/
+[Forth]: https://en.wikipedia.org/wiki/Forth_(programming_language)
+[Guile]: https://www.gnu.org/software/guile/
+[Jim]: http://jim.tcl.tk/
+[Lua]: https://www.lua.org/
 [mini_httpd]: https://www.acme.com/software/mini_httpd/
-[perl]: https://www.perl.org/
-[python]: https://www.python.org/
-[ruby]: https://www.artima.com/intv/ruby.html
+[OCaml]: https://ocaml.org/
+[Perl]: https://www.perl.org/
+[Python]: https://www.python.org/
+[Ruby]: https://www.artima.com/intv/ruby.html
 [suckless philosophy]: https://suckless.org/philosophy/
-[tcl]: https://en.wikipedia.org/wiki/Tcl
+[Tcl]: https://en.wikipedia.org/wiki/Tcl

@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+echo "content-type: text/plain"
+echo ""
+echo "$PATH"
