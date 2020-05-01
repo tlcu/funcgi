@@ -12,7 +12,7 @@ timestamp = \"$(date -u '+%Y-%m-%dT%H:%M:%SZ')\"
 
 [environment]
 
-$(printenv | awk -F'=' '{printf "%-17s =  \"%s\"\n", $1, $2}')
+$(printenv | awk -F'=' '{printf "%-17s = \"%s\"\n", $1, $2}')
 
 [versions]
 
