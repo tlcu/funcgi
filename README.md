@@ -48,7 +48,7 @@ $ docker run --name funcgi \
              --publish 80:1337 tlcu/funcgi:base
 $ curl localhost/cgi-bin/shell
 Hello, World!
- curl localhost/cgi-bin/shell?hi!
+$ curl localhost/cgi-bin/shell?hi!
 Hello, World!
 hi!
 ```

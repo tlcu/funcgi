@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+print_if_exists () {
+  if test "$(command -v "$1")" != ""
+  then printf '%-9s = "%s"' "$1" "$2"
+  fi
+}
+
+echo "content-type: text/plain"
+echo "
+title     = \"funcgi system information\"
+timestamp = \"$(date -u '+%Y-%m-%dT%H:%M:%SZ')\"
+
+[environment]
+
+$(printenv | awk -F'=' '{printf "%-17s =  \"%s\"\n", $1, $2}')
+
+[versions]
+
+kernel    = \"$(uname -r)\"
+alpine    = \"$(cat /etc/alpine-release)\"
+$(print_if_exists busybox "$(busybox | awk 'NR==1{print $2}' | tr -d 'v')")
+$(print_if_exists gforth  "$(gforth --version 2>&1 > /dev/null \
+                             | cut -f 2 -d ' ' \
+                             | sed '/line/d')")
+$(print_if_exists guile   "$(guile --version | awk 'NR==1{print $4}')")
+$(print_if_exists jimsh   "$(jimsh --version)")
+$(print_if_exists ocaml   "$(ocaml --version | cut -f 5 -d ' ')")
+$(print_if_exists perl    "$(perl -e 'print substr($^V, 1)')")
+$(print_if_exists ruby    "$(ruby --version | cut -f 2 -d ' ')")
+$(print_if_exists tclsh   "$(echo 'puts [info patchlevel]; exit 0' | tclsh)")
+"
