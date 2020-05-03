@@ -27,7 +27,7 @@ A number of programming environments are ready to go:
 | [Perl]   | 25,000 extensions on CPAN                     | 39.9      |
 | [Python] | popular and easy-to-learn                     | 58.6      |
 | [Ruby]   | 'Ruby is designed to make programmers happy'  | 24.3      |
-| [Tcl]    | Tool Command Language, batteries included     | 20.6      |
+| [Tcl]    | Tool Command Language, batteries included     | 15.2      |
 
 ## Try it
 
@@ -84,9 +84,10 @@ they are ran by an unprivileged user in a read-only filesystem.
 
 * [dbohdan/jimsh-static]
 * [dseg/docker-mini_httpd-cgi]
-* [BCHS] stack
-* [suckless philosophy]
+* [BCHS]
+* [suckless]
 * [OWASP]
+* [Tcl KitCreator]
 
 ## License
 
@@ -110,5 +111,6 @@ Code is [0BSD], content is [CC BY].
 [Perl]: https://www.perl.org/
 [Python]: https://www.python.org/
 [Ruby]: https://www.artima.com/intv/ruby.html
-[suckless philosophy]: https://suckless.org/philosophy/
+[suckless]: https://suckless.org/philosophy/
 [Tcl]: https://en.wikipedia.org/wiki/Tcl
+[Tcl KitCreator]: https://kitcreator.rkeene.org/fossil/index
