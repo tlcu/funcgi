@@ -44,13 +44,14 @@ set body [string trim "
   We are busy selling your email address <code>[lfindval $POST email]</code>
   to the highest bidder. You are now on a watchlist!
   Here is your encrypted message:
-  <pre>
-    <code style='max-width: 32em;
-                 white-space: normal;
-                 word-wrap: anywhere;
-                 word-break: break-all;'>
-                   [rot13 [unplus [lfindval $POST message]]]
-    </code></pre>
+<pre>
+<code style='max-width: 32em;
+             white-space: normal;
+             word-wrap: anywhere;
+             word-break: break-all;'>
+[rot13 [unplus [lfindval $POST message]]]
+</code>
+</pre>
 </main>
 <footer>
   <nav>

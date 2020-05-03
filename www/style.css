@@ -1,13 +1,15 @@
 body {
+  margin: auto;
+  max-width: 50em;
+  min-width: 45vw;
+  padding: 2ex 1em 8ex 1em;
+}
+
+body, textarea {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                Roboto, Oxygen-Sans, Ubuntu, Cantarell,
                'Helvetica Neue', sans-serif;
-  margin: auto;
-  padding: 2ex 1em 8ex 1em;
-  max-width: 48em;
-  min-width: 45vw;
 }
-
 header {
   border-bottom: 1px solid silver;
 }
@@ -58,6 +60,7 @@ a:hover {
 }
 
 p {
+  line-height: 1.5;
   max-width: 34em;
 }
 
@@ -67,18 +70,20 @@ em {
                serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-code {
-  font-family: SFMono-Regular, Menlo, Monaco,
-               Consolas, 'Liberation Mono', 
-               'Courier New', monospace;
+
+p code {
+  font-size: 0.9rem;
+  padding: 0.5ex 0.5em;
 }
+
+
 pre {
   overflow: auto;
 }
 
 pre code {
   background: #fafafa;
-  border: 1px solid gray;
+  border: 1px solid silver;
   display: inline-block;
   font-size: 0.8em;
   padding: 1ex 1em;
@@ -110,6 +115,10 @@ form {
   max-width: 30em;
 }
 
+form * {
+  font-size: 1em;
+}
+
 form div {
   margin: 1ex 0;
 }
@@ -120,12 +129,17 @@ form label {
   padding: 1ex 0.75em;
 }
 
+form label:after {
+  content: ': ';
+}
+
 form input {
-  min-width: 40%;
+  font-size: 1em;
+  min-width: 70%;
 }
 
 form textarea {
-  max-width: 30em;
+  max-width: 80vw;
   margin: 1ex 1em;
   width: 100%;
   height: 40vh;
@@ -133,7 +147,7 @@ form textarea {
 }
 
 .submit {
-  font-size: 1em;
+  background: #fafafa;
   font-weight: bold;
   padding: 1ex 1em;
   margin: 1ex 1em;
@@ -154,4 +168,35 @@ form input, form textarea {
 
 form input:focus, form textarea:focus {
   border: 1px solid blue;
+}
+
+table {
+  background: #fafafa;
+  border: 1px solid silver;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+thead {
+  background: #eee;
+}
+
+tr:nth-child(even) {
+  background: whitesmoke;
+}
+
+td {
+  font-size: 0.9em;
+}
+
+th, td {
+  border: 1px solid gainsboro;
+  padding: 1.25ex 1em;
+  white-space: nowrap;
+}
+
+code, pre, td {
+  font-family: SFMono-Regular, Menlo, Monaco,
+               Consolas, 'Liberation Mono', 
+               'Courier New', monospace;
 }

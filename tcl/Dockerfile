@@ -1,6 +1,6 @@
 FROM alpine:latest
-ADD tclkit.tar.gz /usr/bin/tclsh
-RUN apk --update add --no-cache mini_httpd; \
+#ADD tclkit.tar.gz /usr/bin/tclsh
+RUN apk --update add --no-cache mini_httpd tcl tcllib tzdata; \
       addgroup -S feeble \
       && adduser -S weakling -G feeble
 EXPOSE 1337
