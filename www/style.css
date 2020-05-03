@@ -104,3 +104,54 @@ footer {
   border-top: 1px solid silver;
   padding-top: 2ex;
 }
+
+
+form {
+  max-width: 30em;
+}
+
+form div {
+  margin: 1ex 0;
+}
+
+form label {
+  display: inline-block;
+  min-width: 4em;
+  padding: 1ex 0.75em;
+}
+
+form input {
+  min-width: 40%;
+}
+
+form textarea {
+  max-width: 30em;
+  margin: 1ex 1em;
+  width: 100%;
+  height: 40vh;
+  overflow: auto;
+}
+
+.submit {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 1ex 1em;
+  margin: 1ex 1em;
+  min-width: auto;
+}
+
+.submit:hover {
+  border: 1px solid blue;
+  color: blue;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form input, form textarea {
+  border: 1px solid silver;
+  padding: 1ex 0.5em;
+}
+
+form input:focus, form textarea:focus {
+  border: 1px solid blue;
+}

@@ -1,0 +1,65 @@
+#!/usr/bin/env tclsh
+lappend auto_path /usr/lib
+package require luddite
+
+proc car lst {lindex $lst 0}
+proc cdr lst {lindex $lst 1}
+proc caar lst {car [car $lst]}
+proc cadr lst {car [cdr $lst]}
+proc cdar lst {cdr [car $lst]}
+proc cddr lst {cdr [cdr $lst]}
+
+proc lfind {lst target} {
+    lindex $lst [lsearch $lst *$target*]
+}
+proc lfindval {lst key} {
+    cdr [lfind $lst $key]
+}
+proc unplus str {
+    string map {+ " "} $str
+}
+
+proc rot13 str {
+    string map {
+        a n b o c p d q e r f s g t h u i v j w k x l y m z
+        n a o b p c q d r e s f t g u h v i w j x k y l z m
+        A N B O C P D Q E R F S G T H U I V J W K X L Y M Z
+        N A O B P C Q D R E S F T G U H V I W J X K Y L Z M
+    } $str
+}
+
+set body [string trim "
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' type='text/css' href='/style.css'>
+<title>ROT13: Encrypted Message</title>
+<header>
+  <h1>ROT13</h1>
+</header>
+<main>
+<h2>Encrypted Message</h2>
+<p>
+  Thanks, [string map {+ " "} [lfindval $POST name]].
+  We are busy selling your email address <code>[lfindval $POST email]</code>
+  to the highest bidder. You are now on a watchlist!
+  Here is your encrypted message:
+  <pre>
+    <code style='max-width: 32em;
+                 white-space: normal;
+                 word-wrap: anywhere;
+                 word-break: break-all;'>
+                   [rot13 [unplus [lfindval $POST message]]]
+    </code></pre>
+</main>
+<footer>
+  <nav>
+    <a href='/'>Home</a>
+    <a href='https://github.com/tlcu/funcgi'>Source Code</a>
+    <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY</a>
+  </nav>
+</footer>
+"]
+
+puts [header {text/html;charset=utf-8}]$body
+
